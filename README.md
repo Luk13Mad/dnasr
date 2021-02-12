@@ -65,3 +65,5 @@ This was part of my master thesis. The hoped results were not achieved but i tho
 The SHAZAM finger prints are cool but not very useful for further processing outside the SHAZAM environment. But the entropy information may be used further. **Following up un this soon**
   
 ## Performance
+
+![performance](https://github.com/Luk13Mad/dnasr/blob/Luk13Mad-add_README/data/fig1.png)
