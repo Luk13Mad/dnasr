@@ -66,4 +66,4 @@ The SHAZAM finger prints are cool but not very useful for further processing out
   
 ## Performance
 
-![performance](https://github.com/Luk13Mad/dnasr/blob/Luk13Mad-add_README/data/fig1.png)
+![performance](https://github.com/Luk13Mad/dnasr/blob/master/data/fig1.png)
