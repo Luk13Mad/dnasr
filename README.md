@@ -48,7 +48,7 @@ dnasr search **not implemented yet**
 ## FAQ 
 ### How is this all working ?  
 Please look at the [PDF](https://github.com/Luk13Mad/dnasr/tree/master/data) and the referenced literature within.
-For a more verbose code there is a [prototype](https://github.com/Luk13Mad/DNA-SHAZAM) written in python.
+For more verbose code there is a [prototype](https://github.com/Luk13Mad/DNA-SHAZAM) written in python.
 
 ### And the short version of how this works?
 The input DNA sequence gets split into kmers.
@@ -62,7 +62,7 @@ Install Rust by following the [instructions](https://www.rust-lang.org/tools/ins
 This was part of my master thesis. The hoped results were not achieved but i thought it was a neat concept.
 
 ### Why is there an early exit option?
-The SHAZAM finger prints are cool but not very useful for further processing outside the SHAZAM environment. But the entropy information may be used further. **Following up un this soon**
+The SHAZAM finger prints are not very useful for further processing outside the SHAZAM environment. But the entropy information may be used further. **Following up on this soon**
   
 ## Performance
 
