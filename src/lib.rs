@@ -278,7 +278,7 @@ pub mod shannon_entropy {
                     for (chunk, idx) in mychunks.iter().zip(myindex.iter()) {
                         let position_vec = match b.entropy_values.get_mut(*chunk) {
                             Some(r) => r,
-                            None => process::exit(1),
+                            None => continue,
                         };
                         position_vec.push(*idx as f64);
                     }
@@ -369,6 +369,15 @@ pub mod shannon_entropy {
                 }
             }
             return ();
+        }
+
+        fn chained_operations(&mut self) ->(){
+            self.get_position();
+            self.calc_alpha();
+            self.calc_beta();
+            self.calc_q();
+            self.calc_H();
+            println!("Record {:?} done",self.id)
         }
     }
 
@@ -518,11 +527,7 @@ pub mod shannon_entropy {
         };
         records_in_file
             .par_iter_mut()
-            .for_each(|x| x.get_position());
-        records_in_file.par_iter_mut().for_each(|x| x.calc_alpha());
-        records_in_file.par_iter_mut().for_each(|x| x.calc_beta());
-        records_in_file.par_iter_mut().for_each(|x| x.calc_q());
-        records_in_file.par_iter_mut().for_each(|x| x.calc_H());
+            .for_each(|x| x.chained_operations());
         if config.early_exit {
             print_to_file(&records_in_file, &config.output_dir)
         };
