@@ -203,8 +203,6 @@ pub mod shannon_entropy {
     pub struct Record {
         pub seq: String,
         pub id: String,
-        /*pub meth : bool,
-        pub meth_scale : f32,*/
         pub window_size: u32,
         pub window_starts: Vec<String>,
         pub kmers: Vec<u32>,
@@ -214,8 +212,6 @@ pub mod shannon_entropy {
         fn new(config: &Generate_Config, seq: &[u8], id: &str) -> Result<Record, &'static str> {
             let seq = std::str::from_utf8(seq.clone()).unwrap().to_string();
             let id = String::from(id);
-            /*let meth = config.meth;
-            let meth_scale=match meth{true => 1.0,false => 1.0,}; //TODO implement if meth == true*/
             let window_size = config.window;
             let kmers = (3..config.kmer).collect();
             let window_starts = match Record::generate_window_starts(&seq, &window_size) {
@@ -275,10 +271,10 @@ pub mod shannon_entropy {
                 for s in &self.kmers {
                     let mychunks = Record::char_windows(a, *s as usize).collect::<Vec<&str>>();
                     let myindex = (0..mychunks.len() as u32).collect::<Vec<u32>>();
-                    for (chunk, idx) in mychunks.iter().zip(myindex.iter()) {
+                    'skiphere : for (chunk, idx) in mychunks.iter().zip(myindex.iter()) {
                         let position_vec = match b.entropy_values.get_mut(*chunk) {
                             Some(r) => r,
-                            None => continue,
+                            None => continue 'skiphere,
                         };
                         position_vec.push(*idx as f64);
                     }
