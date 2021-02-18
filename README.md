@@ -62,7 +62,7 @@ Install Rust by following the [instructions](https://www.rust-lang.org/tools/ins
 This was part of my master thesis. The hoped results were not achieved but i thought it was a neat concept.
 
 ### Why is there an early exit option?
-The SHAZAM finger prints are not very useful for further processing outside the SHAZAM environment. But the entropy information may be used further. **Following up on this soon**
+The SHAZAM finger prints are not very useful for further processing outside the SHAZAM environment. But the entropy information may be used further. [Demonstration](https://github.com/Luk13Mad/dnasr_demo)
   
 ## Performance
 The data used for the figure can be found in this repository.
